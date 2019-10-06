@@ -246,4 +246,21 @@ public class VectorFunctions {
 		
 		return th;
 	}
+	/**
+	 * Returns a normalized vector gained from the specified rotation angles.
+	 * @param v_rotate Vertical rotation angle
+	 * @param h_rotate Horizontal rotation angle
+	 * @return Vector
+	 */
+	public static Vector VGetFromAngles(float v_rotate,float h_rotate) {
+		Vector ret=new Vector();
+		
+		ret.SetX((float)Math.cos(h_rotate));
+		ret.SetY((float)Math.sin(v_rotate));
+		ret.SetZ(-(float)Math.sin(h_rotate));
+		
+		ret=VectorFunctions.VNorm(ret);
+		
+		return ret;
+	}
 }
