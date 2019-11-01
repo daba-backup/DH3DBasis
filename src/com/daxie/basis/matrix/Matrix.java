@@ -29,8 +29,12 @@ public class Matrix {
 		String separator=System.getProperty("line.separator");
 		
 		for(int i=0;i<4;i++) {
-			for(int j=0;j<4;j++)ret+=m[i][j]+" ";
-			ret+=separator;
+			for(int j=0;j<4;j++) {
+				ret+=m[i][j];
+				if(j!=3)ret+=" ";
+			}
+			
+			if(i!=3)ret+=separator;
 		}
 		
 		return ret;
