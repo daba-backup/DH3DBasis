@@ -321,7 +321,7 @@ public class MatrixFunctions {
 		cofactor.SetValue(0, 3, -a12*a23*a34-a13*a24*a32-a14*a22*a33+a14*a23*a32+a13*a22*a34+a12*a24*a33);
 		cofactor.SetValue(1, 0, -a21*a33*a44-a23*a34*a41-a24*a31*a43+a24*a33*a41+a23*a31*a44+a21*a34*a43);
 		cofactor.SetValue(1, 1, a11*a33*a44+a13*a34*a41+a14*a31*a43-a14*a33*a41-a13*a31*a44-a11*a34*a43);
-		cofactor.SetValue(1, 2, -a11*a23*a44-a13*a24*a41-a14*a21*a43-a14*a33*a41-a13*a31*a44-a11*a34*a43);
+		cofactor.SetValue(1, 2, -a11*a23*a44-a13*a24*a41-a14*a21*a43+a14*a23*a41+a13*a21*a44+a11*a24*a43);
 		cofactor.SetValue(1, 3, a11*a23*a34+a13*a24*a31+a14*a21*a33-a14*a23*a31-a13*a21*a34-a11*a24*a33);
 		cofactor.SetValue(2, 0, a21*a32*a44+a22*a34*a41+a24*a31*a42-a24*a32*a41-a22*a31*a44-a21*a34*a42);
 		cofactor.SetValue(2, 1, -a11*a32*a44-a12*a34*a41-a14*a31*a42+a14*a32*a41+a12*a31*a44+a11*a34*a42);
