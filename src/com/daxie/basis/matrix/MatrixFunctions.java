@@ -3,7 +3,7 @@ package com.daxie.basis.matrix;
 import com.daxie.basis.vector.Vector;
 
 /**
- * Offers methods to handle matrices.
+ * Provides methods to handle matrices.
  * @author Daba
  *
  */

@@ -1,7 +1,7 @@
 package com.daxie.basis.coloru8;
 
 /**
- * Offers methods to handle ColorU8.
+ * Provides methods to handle ColorU8.
  * @author Daba
  *
  */
