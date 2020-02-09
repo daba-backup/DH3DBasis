@@ -242,7 +242,7 @@ public class VectorFunctions {
 		float cos_th=v.GetX()/xz_length;
 		th=(float)Math.acos(cos_th);
 		
-		if(v.GetZ()<0.0f)th*=(-1.0f);
+		if(v.GetZ()>=0.0f)th*=(-1.0f);
 		
 		return th;
 	}
