@@ -247,7 +247,7 @@ public class VectorFunctions {
 		return th;
 	}
 	/**
-	 * Returns a normalized vector gained from the specified rotation angles.
+	 * Returns a normalized vector obtained from the specified rotation angles.
 	 * @param v_rotate Vertical rotation angle
 	 * @param h_rotate Horizontal rotation angle
 	 * @return Vector
