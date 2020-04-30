@@ -1,4 +1,4 @@
-package com.daxie.basis.matrix;
+package com.github.dabasan.basis.matrix;
 
 /**
  * 4 by 4 matrix

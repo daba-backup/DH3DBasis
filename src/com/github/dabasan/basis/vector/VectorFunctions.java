@@ -1,6 +1,6 @@
-package com.daxie.basis.vector;
+package com.github.dabasan.basis.vector;
 
-import com.daxie.basis.matrix.Matrix;
+import com.github.dabasan.basis.matrix.Matrix;
 
 /**
  * Provides methods to handle vectors.

@@ -1,4 +1,4 @@
-package com.daxie.basis.vector;
+package com.github.dabasan.basis.vector;
 
 /**
  * 3D vector

@@ -5,7 +5,7 @@
 
 	<groupId>com.github.dabasan</groupId>
 	<artifactId>dh3dbasis</artifactId>
-	<version>1.2.3</version>
+	<version>2.0.0</version>
 
 	<name>DH3DBasis</name>
 	<description>Basic classes for 3D operations</description>
