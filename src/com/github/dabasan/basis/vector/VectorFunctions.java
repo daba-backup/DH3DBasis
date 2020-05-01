@@ -1,7 +1,5 @@
 package com.github.dabasan.basis.vector;
 
-import com.github.dabasan.basis.matrix.Matrix;
-
 /**
  * Provides methods to handle vectors.
  * @author Daba
@@ -131,69 +129,6 @@ public class VectorFunctions {
 		res.SetZ(lhs.GetX()*rhs.GetY()-lhs.GetY()*rhs.GetX());
 		
 		return res;
-	}
-	private static Vector innerVTransform(float[] ex_v,Matrix m) {
-		Vector ret=new Vector();
-		
-		float m00,m01,m02,m03;
-		float m10,m11,m12,m13;
-		float m20,m21,m22,m23;
-		m00=m.GetValue(0, 0);
-		m01=m.GetValue(0, 1);
-		m02=m.GetValue(0, 2);
-		m03=m.GetValue(0, 3);
-		m10=m.GetValue(1, 0);
-		m11=m.GetValue(1, 1);
-		m12=m.GetValue(1, 2);
-		m13=m.GetValue(1, 3);
-		m20=m.GetValue(2, 0);
-		m21=m.GetValue(2, 1);
-		m22=m.GetValue(2, 2);
-		m23=m.GetValue(2, 3);
-		
-		ret.SetX(m00*ex_v[0]+m01*ex_v[1]+m02*ex_v[2]+m03*ex_v[3]);
-		ret.SetY(m10*ex_v[0]+m11*ex_v[1]+m12*ex_v[2]+m13*ex_v[3]);
-		ret.SetZ(m20*ex_v[0]+m21*ex_v[1]+m22*ex_v[2]+m23*ex_v[3]);
-		
-		return ret;
-	}
-	/**
-	 * Transforms a vector.
-	 * @param v Vector
-	 * @param m Matrix
-	 * @return m*v
-	 */
-	public static Vector VTransform(Vector v,Matrix m) {
-		Vector ret=new Vector();
-		
-		float[] ex_v=new float[4];
-		ex_v[0]=v.GetX();
-		ex_v[1]=v.GetY();
-		ex_v[2]=v.GetZ();
-		ex_v[3]=1.0f;
-		
-		ret=innerVTransform(ex_v, m);
-		
-		return ret;
-	}
-	/**
-	 * Transforms a vector without translation.
-	 * @param v Vector
-	 * @param m Matrix
-	 * @return m*v
-	 */
-	public static Vector VTransformSR(Vector v,Matrix m) {
-		Vector ret=new Vector();
-		
-		float[] ex_v=new float[4];
-		ex_v[0]=v.GetX();
-		ex_v[1]=v.GetY();
-		ex_v[2]=v.GetZ();
-		ex_v[3]=0.0f;
-		
-		ret=innerVTransform(ex_v, m);
-		
-		return ret;
 	}
 	/**
 	 * Returns the average (center) of the vector.
