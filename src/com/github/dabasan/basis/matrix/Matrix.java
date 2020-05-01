@@ -1,7 +1,7 @@
 package com.github.dabasan.basis.matrix;
 
 /**
- * 4 by 4 matrix
+ * 4x4 matrix
  * @author Daba
  *
  */
