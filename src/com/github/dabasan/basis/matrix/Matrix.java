@@ -7,7 +7,7 @@ package com.github.dabasan.basis.matrix;
  *
  */
 public class Matrix {
-	private float[][] m;
+	private final float[][] m;
 
 	/**
 	 * All elements are set to 0.
@@ -16,8 +16,9 @@ public class Matrix {
 		m = new float[4][4];
 
 		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 4; j++)
+			for (int j = 0; j < 4; j++) {
 				m[i][j] = 0.0f;
+			}
 		}
 	}
 	/**
@@ -30,8 +31,9 @@ public class Matrix {
 		m = new float[4][4];
 
 		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 4; j++)
+			for (int j = 0; j < 4; j++) {
 				m[i][j] = v;
+			}
 		}
 	}
 	/**
@@ -44,25 +46,28 @@ public class Matrix {
 		this.m = new float[4][4];
 
 		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 4; j++)
+			for (int j = 0; j < 4; j++) {
 				this.m[i][j] = mat.m[i][j];
+			}
 		}
 	}
 
 	@Override
 	public String toString() {
 		String ret = "";
-		String separator = System.getProperty("line.separator");
+		final String separator = System.getProperty("line.separator");
 
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
 				ret += m[i][j];
-				if (j != 3)
+				if (j != 3) {
 					ret += " ";
+				}
 			}
 
-			if (i != 3)
+			if (i != 3) {
 				ret += separator;
+			}
 		}
 
 		return ret;

@@ -19,7 +19,7 @@ public class MatrixFunctions {
 	 * @return m1*m2
 	 */
 	public static Matrix MMult(Matrix m1, Matrix m2) {
-		Matrix ret = new Matrix();
+		final Matrix ret = new Matrix();
 
 		float value;
 		for (int i = 0; i < 4; i++) {
@@ -43,14 +43,16 @@ public class MatrixFunctions {
 	 * @return Identity matrix
 	 */
 	public static Matrix MGetIdent() {
-		Matrix ret = new Matrix();
+		final Matrix ret = new Matrix();
 
 		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 4; j++)
+			for (int j = 0; j < 4; j++) {
 				ret.SetValue(i, j, 0.0f);
+			}
 		}
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < 4; i++) {
 			ret.SetValue(i, i, 1.0f);
+		}
 
 		return ret;
 	}
@@ -62,7 +64,7 @@ public class MatrixFunctions {
 	 * @return Scaling matrix
 	 */
 	public static Matrix MGetScale(Vector scale) {
-		Matrix ret = new Matrix();
+		final Matrix ret = new Matrix();
 
 		ret.SetValue(0, 0, scale.GetX());
 		ret.SetValue(0, 1, 0.0f);
@@ -91,7 +93,7 @@ public class MatrixFunctions {
 	 * @return Translation matrix
 	 */
 	public static Matrix MGetTranslate(Vector translate) {
-		Matrix ret = new Matrix();
+		final Matrix ret = new Matrix();
 
 		ret.SetValue(0, 0, 1.0f);
 		ret.SetValue(0, 1, 0.0f);
@@ -120,7 +122,7 @@ public class MatrixFunctions {
 	 * @return Rotation matrix
 	 */
 	public static Matrix MGetRotX(float th) {
-		Matrix ret = new Matrix();
+		final Matrix ret = new Matrix();
 
 		ret.SetValue(0, 0, 1.0f);
 		ret.SetValue(0, 1, 0.0f);
@@ -149,7 +151,7 @@ public class MatrixFunctions {
 	 * @return Rotation matrix
 	 */
 	public static Matrix MGetRotY(float th) {
-		Matrix ret = new Matrix();
+		final Matrix ret = new Matrix();
 
 		ret.SetValue(0, 0, (float) Math.cos(th));
 		ret.SetValue(0, 1, 0.0f);
@@ -178,7 +180,7 @@ public class MatrixFunctions {
 	 * @return Rotation matrix
 	 */
 	public static Matrix MGetRotZ(float th) {
-		Matrix ret = new Matrix();
+		final Matrix ret = new Matrix();
 
 		ret.SetValue(0, 0, (float) Math.cos(th));
 		ret.SetValue(0, 1, (float) -Math.sin(th));
@@ -209,13 +211,13 @@ public class MatrixFunctions {
 	 * @return Rotation matrix
 	 */
 	public static Matrix MGetRotAxis(Vector axis, float th) {
-		Matrix ret = new Matrix();
+		final Matrix ret = new Matrix();
 
-		float cos_th = (float) Math.cos(th);
-		float sin_th = (float) Math.sin(th);
-		float nx = axis.GetX();
-		float ny = axis.GetY();
-		float nz = axis.GetZ();
+		final float cos_th = (float) Math.cos(th);
+		final float sin_th = (float) Math.sin(th);
+		final float nx = axis.GetX();
+		final float ny = axis.GetY();
+		final float nz = axis.GetZ();
 
 		ret.SetValue(0, 0, cos_th + nx * nx * (1.0f - cos_th));
 		ret.SetValue(0, 1, nx * ny * (1.0f - cos_th) - nz * sin_th);
@@ -244,7 +246,7 @@ public class MatrixFunctions {
 	 * @return Transposed matrix
 	 */
 	public static Matrix MTranspose(Matrix m) {
-		Matrix ret = new Matrix();
+		final Matrix ret = new Matrix();
 
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
@@ -260,7 +262,7 @@ public class MatrixFunctions {
 	 * @return Magic square
 	 */
 	public static Matrix MGetMagic() {
-		Matrix ret = new Matrix();
+		final Matrix ret = new Matrix();
 
 		ret.SetValue(0, 0, 16);
 		ret.SetValue(0, 1, 2);
@@ -291,22 +293,22 @@ public class MatrixFunctions {
 	public static float MGetDet(Matrix m) {
 		float ret = 0.0f;
 
-		float a00 = m.GetValue(0, 0);
-		float a01 = m.GetValue(0, 1);
-		float a02 = m.GetValue(0, 2);
-		float a03 = m.GetValue(0, 3);
-		float a10 = m.GetValue(1, 0);
-		float a11 = m.GetValue(1, 1);
-		float a12 = m.GetValue(1, 2);
-		float a13 = m.GetValue(1, 3);
-		float a20 = m.GetValue(2, 0);
-		float a21 = m.GetValue(2, 1);
-		float a22 = m.GetValue(2, 2);
-		float a23 = m.GetValue(2, 3);
-		float a30 = m.GetValue(3, 0);
-		float a31 = m.GetValue(3, 1);
-		float a32 = m.GetValue(3, 2);
-		float a33 = m.GetValue(3, 3);
+		final float a00 = m.GetValue(0, 0);
+		final float a01 = m.GetValue(0, 1);
+		final float a02 = m.GetValue(0, 2);
+		final float a03 = m.GetValue(0, 3);
+		final float a10 = m.GetValue(1, 0);
+		final float a11 = m.GetValue(1, 1);
+		final float a12 = m.GetValue(1, 2);
+		final float a13 = m.GetValue(1, 3);
+		final float a20 = m.GetValue(2, 0);
+		final float a21 = m.GetValue(2, 1);
+		final float a22 = m.GetValue(2, 2);
+		final float a23 = m.GetValue(2, 3);
+		final float a30 = m.GetValue(3, 0);
+		final float a31 = m.GetValue(3, 1);
+		final float a32 = m.GetValue(3, 2);
+		final float a33 = m.GetValue(3, 3);
 
 		ret = a00
 				* (a11 * a22 * a33 + a12 * a23 * a31 + a13 * a21 * a32 - a13 * a22 * a31
@@ -328,26 +330,26 @@ public class MatrixFunctions {
 	 * @return Inverse matrix
 	 */
 	public static Matrix MInverse(Matrix m) {
-		Matrix ret = new Matrix();
+		final Matrix ret = new Matrix();
 
-		float a11 = m.GetValue(0, 0);
-		float a12 = m.GetValue(0, 1);
-		float a13 = m.GetValue(0, 2);
-		float a14 = m.GetValue(0, 3);
-		float a21 = m.GetValue(1, 0);
-		float a22 = m.GetValue(1, 1);
-		float a23 = m.GetValue(1, 2);
-		float a24 = m.GetValue(1, 3);
-		float a31 = m.GetValue(2, 0);
-		float a32 = m.GetValue(2, 1);
-		float a33 = m.GetValue(2, 2);
-		float a34 = m.GetValue(2, 3);
-		float a41 = m.GetValue(3, 0);
-		float a42 = m.GetValue(3, 1);
-		float a43 = m.GetValue(3, 2);
-		float a44 = m.GetValue(3, 3);
+		final float a11 = m.GetValue(0, 0);
+		final float a12 = m.GetValue(0, 1);
+		final float a13 = m.GetValue(0, 2);
+		final float a14 = m.GetValue(0, 3);
+		final float a21 = m.GetValue(1, 0);
+		final float a22 = m.GetValue(1, 1);
+		final float a23 = m.GetValue(1, 2);
+		final float a24 = m.GetValue(1, 3);
+		final float a31 = m.GetValue(2, 0);
+		final float a32 = m.GetValue(2, 1);
+		final float a33 = m.GetValue(2, 2);
+		final float a34 = m.GetValue(2, 3);
+		final float a41 = m.GetValue(3, 0);
+		final float a42 = m.GetValue(3, 1);
+		final float a43 = m.GetValue(3, 2);
+		final float a44 = m.GetValue(3, 3);
 
-		Matrix cofactor = new Matrix();
+		final Matrix cofactor = new Matrix();
 		cofactor.SetValue(0, 0, a22 * a33 * a44 + a23 * a34 * a42 + a24 * a32 * a43
 				- a24 * a33 * a42 - a23 * a32 * a44 - a22 * a34 * a43);
 		cofactor.SetValue(0, 1, -a12 * a33 * a44 - a13 * a34 * a42 - a14 * a32 * a43
@@ -381,8 +383,8 @@ public class MatrixFunctions {
 		cofactor.SetValue(3, 3, a11 * a22 * a33 + a12 * a23 * a31 + a13 * a21 * a32
 				- a13 * a22 * a31 - a12 * a21 * a33 - a11 * a23 * a32);
 
-		float det = MatrixFunctions.MGetDet(m);
-		float rec_det = 1.0f / det;
+		final float det = MatrixFunctions.MGetDet(m);
+		final float rec_det = 1.0f / det;
 
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
@@ -405,7 +407,7 @@ public class MatrixFunctions {
 	public static Vector VTransform(Vector v, Matrix m) {
 		Vector ret = new Vector();
 
-		float[] ex_v = new float[4];
+		final float[] ex_v = new float[4];
 		ex_v[0] = v.GetX();
 		ex_v[1] = v.GetY();
 		ex_v[2] = v.GetZ();
@@ -427,7 +429,7 @@ public class MatrixFunctions {
 	public static Vector VTransformSR(Vector v, Matrix m) {
 		Vector ret = new Vector();
 
-		float[] ex_v = new float[4];
+		final float[] ex_v = new float[4];
 		ex_v[0] = v.GetX();
 		ex_v[1] = v.GetY();
 		ex_v[2] = v.GetZ();
@@ -438,7 +440,7 @@ public class MatrixFunctions {
 		return ret;
 	}
 	private static Vector innerVTransform(float[] ex_v, Matrix m) {
-		Vector ret = new Vector();
+		final Vector ret = new Vector();
 
 		float m00, m01, m02, m03;
 		float m10, m11, m12, m13;
